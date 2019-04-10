@@ -1,0 +1,15 @@
+#!/bin/sh
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Building react application"
+
+cd $1
+
+if [ -f yarn.lock ]; then
+  yarn build
+else
+  npm run build
+fi
