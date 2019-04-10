@@ -3,7 +3,7 @@
 if [ -f $1/package.json ]; then
   cd $1
 
-  if [ -z "$(JSON.sh < package.json | grep '\[\"scripts\",\"build\"\]')" ]; then
+  if [ -z "$($BP_DIR/bin/JSON.sh < package.json | grep '\[\"scripts\",\"build\"\]')" ]; then
     exit 1
   fi
 
