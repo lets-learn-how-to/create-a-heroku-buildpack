@@ -1,9 +1,11 @@
 #!/bin/sh
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 if [ -f $1/package.json ]; then
   cd $1
 
-  if [ -z "$(/bin/JSON.sh < package.json | grep '\[\"scripts\",\"build\"\]')" ]; then
+  if [ -z "$($SCRIPT/JSON.sh < package.json | grep '\[\"scripts\",\"build\"\]')" ]; then
     exit 1
   fi
 
