@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export PATH="$BP_PATH/bin:$PATH"
+echo $PATH
 
 if [ -f $1/package.json ]; then
   cd $1
